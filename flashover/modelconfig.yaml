@@ -7,7 +7,7 @@ distcalc:
 firecalc:
   layoutloc: './layouts/'
   roomloc: './rooms'
-  simtime: 1000
+  simtime: 10
   timestep: 1
   itemhrrdataloc: './items/itemhrr/'
   itemloc: './items/iteminfo.csv'

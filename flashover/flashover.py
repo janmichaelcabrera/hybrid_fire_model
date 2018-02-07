@@ -89,6 +89,13 @@ def firecalc(configlocation, room, layout, firstign):
             for i,item in enumerate(itemlist):
                 #Only executes if ith item hasn't ignited 
                 #AND fth item has ignited
+                if item == 'HF':
+                        incident_flux[i] = incident_flux[i] \
+                        + iteminfo.radfrac[fire]\
+                        *np.interp(time - firelist[f]\
+                        ,hrrdic[fire][:,0],hrrdic[fire][:,1]) \
+                        /(4*np.pi*distmatrix[f][i]**2)
+                        print(incident_flux[i], i)
                 if firelist[f] != configuse['simtime'] and\
                 firelist[i] == configuse['simtime']:
 
@@ -98,6 +105,7 @@ def firecalc(configlocation, room, layout, firstign):
                     *np.interp(time - firelist[f]\
                     ,hrrdic[fire][:,0],hrrdic[fire][:,1]) \
                     /(4*np.pi*distmatrix[f][i]**2)
+
 
                     #Then use FTP model
                     if incident_flux[i] > iteminfo.qcrit[item]:
