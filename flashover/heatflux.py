@@ -101,5 +101,5 @@ def firecalc(configlocation, room, layout, firstign):
     return[flashover, firelist, timelist, heat_flux_array]
 
 
-flashover, firelist, timelist, heat_flux_array = firecalc('modelconfig.yaml', 'burn_structure', 'burn_structure', 0)
+flashover, firelist, timelist, heat_flux_array = firecalc('burn_structure_config.yaml', 'burn_structure', 'burn_structure', 0)
 
