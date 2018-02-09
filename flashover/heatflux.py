@@ -79,10 +79,12 @@ def firecalc(configlocation, room, layout, firstign):
                 #ignite any un-ignited items in compartment
                 firelist[firelist==config_use['simtime']] = time
 
+            j=0
             for i, item in enumerate(item_list):
                 #calculates the incident heat flux to a particular sensor from all items in room
                 if item == 'HF' and fire != 'HF':
-                    print(time, item, iteminfo.radfrac[fire]*np.interp(time - firelist[f],hrr_dic[fire][:,0],hrr_dic[fire][:,1])/(4*np.pi*dist_matrix[f][i]**2))
+                    heat_flux_array[t, j] = iteminfo.radfrac[fire]*np.interp(time - firelist[f],hrr_dic[fire][:,0],hrr_dic[fire][:,1])/(4*np.pi*dist_matrix[f][i]**2)
+                    j += 1
 
                 #only executes if ith item has not ignited and fth item has
                 if firelist[f] != config_use['simtime'] and firelist[i] == config_use['simtime']:
@@ -96,14 +98,8 @@ def firecalc(configlocation, room, layout, firstign):
                         if FTP[i] > iteminfo.FTP[item]:
                             firelist[i] = time
 
-    return[flashover,firelist]
+    return[flashover, firelist, timelist, heat_flux_array]
 
 
+flashover, firelist, timelist, heat_flux_array = firecalc('modelconfig.yaml', 'burn_structure', 'burn_structure', 0)
 
-
-
-
-
-x, y = firecalc('modelconfig.yaml', 'validation', 'validation', 0)
-
-# print(y)
