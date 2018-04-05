@@ -22,7 +22,7 @@ def firecalc(configlocation, room, layout, firstign):
     #room surface area for flashover correlation
     surf_area = 2*roominfo['width'][0]*roominfo['length'][0] + 2*roominfo['width'][0]*roominfo['height'][0] + 2*roominfo['length'][0]*roominfo['height'][0]
 
-    #find flash over for given compartmetn with surface area = surf_area
+    #find flash over for given compartment with surface area = surf_area
     Q_FO = 378*(1 + .021*(surf_area/(roominfo['ventarea'][0] * roominfo['ventheight'][0]**.5))) * roominfo['ventarea'][0]*roominfo['ventheight'][0]**.5
 
     #if/when flashover occurs, the NaN is replaced with a time
@@ -85,7 +85,10 @@ def firecalc(configlocation, room, layout, firstign):
             for i, item in enumerate(item_list):
                 #calculates the incident heat flux to a particular sensor from all items in room
                 if item == 'HF' and fire != 'HF':
-                    heat_flux_array[t, j] = iteminfo.radfrac[fire]*np.interp(time - firelist[f],hrr_dic[fire][:,0],hrr_dic[fire][:,1])/(4*np.pi*dist_matrix[f][i]**2)
+                    heat_flux_array[t, j] = heat_flux_array[t, j] + iteminfo.radfrac[fire]*np.interp(time - firelist[f],hrr_dic[fire][:,0],hrr_dic[fire][:,1])/(4*np.pi*dist_matrix[f][i]**2)
+                    # print(iteminfo.radfrac[fire])
+                    # print(np.interp(time - firelist[f],hrr_dic[fire][:,0],hrr_dic[fire][:,1]))
+                    # print(4*np.pi*dist_matrix[f][i]**2)
                     j += 1
 
                 #only executes if ith item has not ignited and fth item has
@@ -110,4 +113,4 @@ flashover, firelist, timelist, heat_flux_array = firecalc('burn_structure_config
 figure()
 plot(heat_flux_array)
 show()
-np.savetxt('tmp.csv', heat_flux_array, delimiter = ',')
+# np.savetxt('tmp.csv', heat_flux_array, delimiter = ',')

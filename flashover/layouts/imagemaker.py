@@ -36,8 +36,8 @@ for filename in os.listdir('.'):
 
         plt.xlim(0,roomwidth)
         plt.ylim(0,roomlength)
-        plt.xlabel('Width (m)', fontsize=12)
-        plt.ylabel('Length (m)', fontsize=12)
+        plt.xlabel('Length (m)', fontsize=12)
+        plt.ylabel('Width (m)', fontsize=12)
         fig1.savefig('./pictures/' + filename[:-4] + '.pdf', dpi=90, bbox_inches='tight')
         plt.close()
 
