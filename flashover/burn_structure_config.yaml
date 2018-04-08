@@ -1,0 +1,14 @@
+#This file contains all the input parameters used in the scripts in the fire model
+#every header contains the name of the script to which the underlying configuration 
+#variables belong. The default of this file contains the defaults of all the values.
+
+distcalc:
+  layoutloc: './layouts/'
+firecalc:
+  layoutloc: './layouts/'
+  roomloc: './rooms'
+  simtime: 2000
+  timestep: 1
+  itemhrrdataloc: './items/itemhrr/'
+  itemloc: './items/iteminfo.csv'
+ 

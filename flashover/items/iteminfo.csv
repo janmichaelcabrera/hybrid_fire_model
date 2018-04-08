@@ -1,20 +1,20 @@
 item,FTP,qcrit,radfrac,n,numcurves,type
-B,1653,20,0.31,2,1,Bookshelf
-C,1653,20,0.31,2,1,Cubicle
-Co,1653,20,0.31,2,1,Couch
-CT,2913,35,0.29,1.3,1,Coffee table
-D,2913,35,0.29,1.3,1,Dresser
-De,2913,35,0.29,1.3,1,Desk
-E,2913,35,0.29,1.3,1,End table
-K,1653,20,0.31,2,1,King sized bed
-L,1653,20,0.31,2,1,Loveseat
-N,2913,35,0.29,1.3,1,Nightstand
-Q,1653,20,0.31,2,1,Queen sized bed
-TV,14126,25,0.3,1.8,1,TV stand
-Tw,1653,20,0.31,2,1,Twin bed
-W,1653,20,0.31,2,1,Window drapery
+B,2211,7.5,0.31,2,1,Bookshelf
+C,2211,7.5,0.31,2,1,Cubicle
+Co,2211,7.5,0.31,2,1,Couch
+CT,4049,10.5,0.29,1.3,1,Coffee table
+D,4049,10.5,0.29,1.3,1,Dresser
+De,4049,10.5,0.29,1.3,1,Desk
+E,4049,10.5,0.29,1.3,1,End table
+K,2211,7.5,0.31,2,1,King sized bed
+L,2211,7.5,0.31,2,1,Loveseat
+N,4049,10.5,0.29,1.3,1,Nightstand
+Q,2211,7.5,0.31,2,1,Queen sized bed
+TV,19241,7.1,0.3,1.8,1,TV stand
+Tw,2211,7.5,0.31,2,1,Twin bed
+W,2211,7.5,0.31,2,1,Window drapery
 T,100,10,0.3,1.5,1,Test (for validation)
 HF,1000000,1,1,1,1,Heat flux sensor
-U,100,10,0.3,1.5,1,Uniform
 P,1,1,0.2,1,1,Pool fire
-Nu,200,1,0.29,1.3,1,Nightstand
+DC,2211,7.5,0.31,2,1,Dalmarnock Couch
+DB,2211,7.5,0.31,2,1,Dalmarnock Bookcase

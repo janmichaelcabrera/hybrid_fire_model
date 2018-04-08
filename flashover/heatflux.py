@@ -108,7 +108,7 @@ def firecalc(configlocation, room, layout, firstign):
 
 flashover, firelist, timelist, heat_flux_array = firecalc('burn_structure_config.yaml', 'burn_structure', 'burn_structure', 0)
 
-# print(timelist)
+print(firelist)
 # print(heat_flux_array)
 figure()
 plot(heat_flux_array)
